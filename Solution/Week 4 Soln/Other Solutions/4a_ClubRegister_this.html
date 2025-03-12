@@ -1,0 +1,78 @@
+<!-- Using this.id to refer to the id of chosen element.
+	Will learn "this" in 6b_JS_Objects.
+    Also need onfocus() and onblur().-->
+<html>
+<head>
+<style>
+.box{width:400px; border:2px solid green; padding:5px; margin:5px;}
+#helpBox{height:50px;}
+input:hover {border:2px solid blue;}
+select:hover{border:1px solid blue;}
+</style>
+</head>
+
+<body>
+	<div class="box">
+		<h2>Club Register</h2>	
+		<p>Enter your First name:
+		<input type="text" id="fName"
+			onfocus="highlight(this.id), showHint('Enter your first name')"
+			onblur="unhighlighted(this.id)" /></p>
+			
+		<p>Enter your Last name:
+		<input type="text" id="lName"
+			onfocus="highlight(this.id), showHint('Enter your family name')"
+			onblur="unhighlighted(this.id)" ></p>
+			
+		<p>Enter your Mobile Number:
+		<input type="number" id="mobNumber"
+			onfocus="highlight(this.id), showHint('Enter your mobile number')"
+			onblur="unhighlighted(this.id)" ></p>
+			
+		<p>Year Grade:
+		<select id="yearGrade"
+			onfocus="highlight(this.id), showHint('Enter your Grade Year')"
+			onblur="unhighlighted(this.id)" >
+			<option value="Y1">Year 1</option>
+			<option value="Y2">Year 2</option>
+			<option value="Y3">Year 3</option>
+			<option value="Y4">Year 4</option>
+		</select></p>
+		
+		<p>Enter your Date of birth:
+		<input type="date" id="dob"
+			onfocus="highlight(this.id), showHint('Enter your date of birth')"
+			onblur="unhighlighted(this.id)" ></p>
+			
+		<p><button type="button" onclick="showData()">Submit here</button></p>
+		
+	</div>
+	<div id="helpbox" class="box">
+	<p id="hint"></p>
+	</div><!-- Output helpful hints to the user -->
+	<script>
+		function highlight(id){
+			document.getElementById(id).style.backgroundColor ="yellow";
+		}
+		
+		function unhighlighted(id){
+			document.getElementById(id).style.backgroundColor ="white";
+		}
+		
+		function showHint(myText){
+			document.getElementById("hint").innerHTML = myText;
+		}
+		
+		function showData(){
+			alert(
+				"Name " + document.getElementById("fName").value +
+				" " + document.getElementById("lName").value +
+				"\nMobile : " + document.getElementById("mobNumber").value +
+				"\nYear : " + document.getElementById("yearGrade").value +
+				"\nDoB : " + document.getElementById("dob").value
+			)
+		}
+
+	</script>
+</body>
+</html>

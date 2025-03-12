@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+
+<p>The local variable carName cannot be accessed from outside the function:</p>
+
+<p id="demo"></p>
+
+<p id="demoFunction"></p>
+
+<script>
+myFunction();	//this invokes (calls) myFunction
+
+document.getElementById("demo").innerHTML =
+"Type of carName is " + typeof carName;
+
+function myFunction() {
+  var carName = "Volvo";
+  document.getElementById("demoFunction").innerHTML =
+  "Type of carName is " + typeof carName + " " + carName + " (inside function)";
+}
+
+
+</script>
+
+</body>
+</html>

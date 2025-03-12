@@ -1,0 +1,44 @@
+<html>
+<head>
+<style>
+  .c{color:gray;height:25px;width:250px;font-size:20px;}
+</style>
+</head>
+
+<body>
+<form>
+  <br>
+  <h4>Input Type</h4>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br>
+  <!--input type="text" id="lname" name="lname" class="c"><br-->
+  <br>
+  User name:<br>
+  <input type="text" value="username" ><br>
+  <!--input type="text" value="username" class="c"><br-->
+  User password:<br>
+  <input type="password" name="pwd">
+  <br><br>
+ 
+  <button type="button" 
+  onclick="alert('After you learn PHP later this semester, you can store and process the info in the input boxes.')">
+	Click Me</button>
+  <br><br>
+  --------------------------------------------------
+  <br>
+  <h4>Data Validation</h4>
+  See what happens when you enter a value, and then an invalid value.
+  <br><br>
+  Enter a date before 1980-01-01:<br>
+  <br>
+  <input type="date" name="birthday" max="1979-12-31">
+  <br><br>
+  Email:
+  <input type="email" name="email">
+  <br><br>
+  <input type="submit">
+</form>
+</body>
+</html>

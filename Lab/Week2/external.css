@@ -1,0 +1,41 @@
+.title-banner {
+    font-size: 30px;
+    background-color: blue;
+    color: yellow;
+    text-align: center;
+}
+
+.title-banner-gray {
+    height: 30px;
+    background-color: gray;
+    color: white;
+    text-align: right;
+}
+
+#orangeParagraph {
+    background-color: orange;
+}
+
+.greenParagraph {
+    color: green;
+}
+
+.info-text {
+    font-family: sans-serif;
+    font-size: 10px;
+}
+
+.no-underline {
+    font-size: 10px;
+    text-decoration: none;
+}
+
+.stay-blue:link,
+.stay-blue:visited {
+    color: blue;
+    text-decoration: underline;
+}
+
+.hover-red:hover {
+    color: red;
+}

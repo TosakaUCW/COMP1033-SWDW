@@ -1,0 +1,77 @@
+<!-- Use only material covered in lecture 4. 
+Also uses onfocus() and onfocusout() to clear_input_color
+-->
+<html>
+<head>
+<style>
+.box{width:400px; border:2px solid green; padding:5px; margin:5px;}
+#helpBox{height:50px;}
+input:hover {border:2px solid blue;}
+select:hover{border:1px solid blue;}
+</style>
+</head>
+<body>
+	<div class="box">
+		<h2>Club Register</h2>	
+		<p>Enter your First name:
+		<input type="text" id="fName" onfocus="fName_input()" onfocusout="clear_input_color()"></p>
+		<p>Enter your Last name:
+		<input type="text" id="lName" onfocus="lName_input()" onfocusout="clear_input_color()"></p>
+		<p>Enter your Mobile Number:
+		<input type="number" id="mobNumber" onfocus="mob_input()" onfocusout="clear_input_color()"></p>
+		<p>Year Grade:
+		<select id="yearGrade" onfocus="grade_input()" onfocusout="clear_input_color()">
+			<option value="Y1">Year 1</option>
+			<option value="Y2">Year 2</option>
+			<option value="Y3">Year 3</option>
+			<option value="Y4">Year 4</option>
+		</select></p>
+		<p>Enter your Date of birth:
+		<input type="date" id="dob" onfocus="dob_input()" onfocusout="clear_input_color()"></p>
+		<p><button type="button" onclick="showData()">Submit here</button></p>
+	</div>
+	
+	<div id="helpbox" class="box">
+	<p id="hint"></p>
+	</div><!-- Output helpful hints to the user -->
+	<script>
+		function fName_input(){
+			document.getElementById("fName").style.backgroundColor ="yellow";
+			document.getElementById("hint").innerHTML ="Enter your first name";
+		}
+		function lName_input(){
+			document.getElementById("lName").style.backgroundColor ="yellow";
+			document.getElementById("hint").innerHTML ="Enter your family name";
+		}
+		function mob_input(){
+			document.getElementById("mobNumber").style.backgroundColor ="yellow";
+			document.getElementById("hint").innerHTML ="Enter your mobile number";
+		}
+		function grade_input(){
+			document.getElementById("yearGrade").style.backgroundColor ="yellow";
+			document.getElementById("hint").innerHTML ="Enter your Grade Year";
+		}
+		function dob_input(){
+			document.getElementById("dob").style.backgroundColor ="yellow";
+			document.getElementById("hint").innerHTML ="Enter your date of birth";
+		}
+		function clear_input_color(){
+			document.getElementById("fName").style.backgroundColor ="white";
+			document.getElementById("lName").style.backgroundColor ="white";
+			document.getElementById("mobNumber").style.backgroundColor ="white";
+			document.getElementById("yearGrade").style.backgroundColor ="white";
+			document.getElementById("dob").style.backgroundColor ="white";
+		}
+		function showData(){
+			alert(
+				"Name " + document.getElementById("fName").value +
+				" " + document.getElementById("lName").value +
+				"\nMobile : " + document.getElementById("mobNumber").value +
+				"\nYear : " + document.getElementById("yearGrade").value +
+				"\nDoB : " + document.getElementById("dob").value
+			)
+		}
+
+	</script>
+</body>
+</html>

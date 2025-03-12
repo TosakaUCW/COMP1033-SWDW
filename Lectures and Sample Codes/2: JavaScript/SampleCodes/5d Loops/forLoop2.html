@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var cars = ["BMW", "Volvo", "Saab", "Ford"];
+
+var i = 0;
+var len = cars.length;
+var text = "<ol>";<!-- creates an ordered list -->
+
+for (; i < len; ) {
+    text += "<li>" + cars[i] + "</li>";
+    i++;
+}
+text += "<ol>";<!-- closing tag of ordered list -->
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>

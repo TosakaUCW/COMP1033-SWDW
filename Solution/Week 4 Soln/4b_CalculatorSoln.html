@@ -1,0 +1,53 @@
+<!-- This code extends the example from the lecture. -->
+<html>
+<head>
+<style>
+#calculator{border: 2px black solid;width:300px;height:400px;}
+button{margin-top:10px;margin-left:10px;}
+</style>
+</head>
+
+<body>
+
+<div id="calculator">
+<h2 style="text-align:center">My Calculator</h2>
+<p>Number One<br>
+<input type="number" id="topValue" /></p>
+<p>Number Two<br>
+<input type="number" id="bottomValue" /></p>
+
+<button type="button" onclick="Plus()">+</button>
+<button type="button" onclick="Minus()">-</button>
+<button type="button" onclick="Multiply()">x</button>
+<button type="button" onclick="Divide()">/</button><br><br>
+<input type="number" id="result" disabled placeholder = "Result"/>
+</div>
+
+<script>
+   function Plus(){
+        var topNum = Number(document.getElementById("topValue").value);
+        var bottomNum = Number(document.getElementById("bottomValue").value);
+        var result = (topNum + bottomNum);
+		document.getElementById("result").value = result;
+   }
+   function Minus(){
+        var topNum = Number(document.getElementById("topValue").value);
+        var bottomNum = Number(document.getElementById("bottomValue").value);
+        var result = (topNum - bottomNum);
+		document.getElementById("result").value = result;
+   }
+   function Multiply(){
+        var topNum = Number(document.getElementById("topValue").value);
+        var bottomNum = Number(document.getElementById("bottomValue").value);
+        var result = (topNum * bottomNum);
+		document.getElementById("result").value = result;
+   }
+   function Divide(){
+        var topNum = Number(document.getElementById("topValue").value);
+        var bottomNum = Number(document.getElementById("bottomValue").value);
+        var result = (topNum / bottomNum);
+		document.getElementById("result").value = result;
+   }
+</script>
+</body>
+</html>

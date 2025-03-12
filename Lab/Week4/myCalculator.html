@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Calculator</title>
+    <style>
+        body {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            box-sizing: border-box;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .button-group button {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            background-color: #e0e0e0;
+            border: 1px solid #999;
+        }
+
+        .button-group button:hover {
+            background-color: #d0d0d0;
+        }
+
+        .result-display {
+            background-color: #aaffaa;
+            padding: 10px;
+            font-size: 24px;
+            text-align: right;
+            height: 40px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Calculator</h1>
+
+    <div class="input-group">
+        <label for="num1">Number One:</label>
+        <input type="number" id="num1">
+    </div>
+
+    <div class="input-group">
+        <label for="num2">Number Two:</label>
+        <input type="number" id="num2">
+    </div>
+
+    <div class="button-group">
+        <button onclick="calculate('+')" id="addBtn">+</button>
+        <button onclick="calculate('-')" id="subtractBtn">-</button>
+        <button onclick="calculate('*')" id="multiplyBtn">x</button>
+        <button onclick="calculate('/')" id="divideBtn">/</button>
+    </div>
+
+    <div class="result-display" id="result">result</div>
+
+    <script>
+        function calculate(operator) {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('result').textContent = "Please input valid number";
+                return;
+            }
+
+            let result;
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 === 0) {
+                        document.getElementById('result').textContent = "The divisor cannot be 0";
+                        return;
+                    }
+                    result = num1 / num2;
+                    break;
+            }
+
+            document.getElementById('result').textContent = Number(result.toFixed(4));
+        }
+    </script>
+</body>
+
+</html>

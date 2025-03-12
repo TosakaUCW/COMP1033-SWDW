@@ -1,0 +1,118 @@
+<!-- Create 3 general div sections before you do the forms-->
+<html>
+
+<head>
+    <style>
+        #div1 {
+            position: absolute;
+            text-align: center;
+            height: 700px;
+            width: 1050px;
+            background-color: white;
+            border: 2px dashed black;
+            z-index: 1;
+        }
+
+        #div2 {
+            position: absolute;
+            text-align: center;
+            height: 600px;
+            width: 300px;
+            top: 100px;
+            left: 50px;
+            background-color: LightBlue;
+            border: 1px dashed brown;
+            z-index: 2;
+        }
+
+        #div3 {
+            position: absolute;
+            text-align: center;
+            height: 600px;
+            width: 600px;
+            top: 100px;
+            left: 400px;
+            background-color: LightGray;
+            border: 1px dashed black;
+            z-index: 2;
+        }
+
+        #div3 form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #div3 input,
+        #div3 textarea {
+            width: 45%;
+            /* padding: 10px; */
+            box-sizing: border-box;
+
+        }
+        
+        #div2 img {
+            width: 75%;
+        }
+        #div3 textarea {
+            width: 95%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="div1">Logon Page</h1>
+
+    <div id="div2">
+        <h1>Members Sign in</h1>
+        <form>
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <br><br>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <br><br>
+            <input type="checkbox" id="remember" name="remember">
+            <!-- <br> -->
+            <label for="remember">tick to remember details</label>
+            <br><br>
+            <!-- <br> -->
+            <button type="submit" onclick="alert('Welcome')">login button</button>
+            <br><br>
+            <a href="" style="color: blue; text-decoration: none;">forgotten password: click here</a>
+            <br><br>
+            <!-- <br> -->
+            <img src="uic.jpeg" alt="UIC Logo" width="300" height="200">
+        </form>
+    </div>
+
+    <div id="div3">
+        <h1>New Members Sign Up</h1>
+        <form style="left:100px">
+
+            <input type="text" id="fname" name="fname" placeholder="first name" required>
+            <input type="text" id="lname" name="lname" placeholder="last name" required>
+            <br><br>
+
+            <input type="text" id="username" name="username" placeholder="username" required>
+            <input type="date" id="birth" name="birth" required>
+            <br><br>
+
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="email" id="email" name="email" placeholder="email" required>
+            <br><br>
+
+            <input type="password" id="cpassword" name="cpassword" placeholder="confirm Password" required>
+            <input type="tel" id="phone" name="phone" placeholder="mobile number" pattern="1[3-9]\d{9}" required>
+            <br><br>
+            <textarea name="comment" rows="15" cols="50" placeholder="comments"></textarea>
+            <br><br>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

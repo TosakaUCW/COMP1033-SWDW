@@ -1,0 +1,56 @@
+<!-- This code removes redundancies. -->
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<script type="text/javascript">
+	var re;
+	function getN1() {
+  		var n1 = document.getElementById("n1").value;
+  		return n1;
+	}
+
+	function getN2() {
+  		var n2 = document.getElementById("n2").value;
+  		return n2;
+	}
+
+	function add() {
+		cValue(Number(getN1())+Number(getN2()));
+	}
+
+	function subtract() {
+		cValue(Number(getN1())-Number(getN2()));
+	}
+	
+	function multiply() {
+		cValue(Number(getN1())*Number(getN2()));
+	}
+	
+	function divide() {
+		cValue(Number(getN1())/Number(getN2()));
+	}
+	
+	function cValue(re) {
+	  var n = document.getElementById("result")
+	  n.innerHTML = re;
+	}
+
+</script>
+<body>
+	<h1>My Calculator</h1><br>
+	<form> 
+		<label>Number One: </label><br> 
+		<input type="text" id="n1"><br> 
+		<label>Number Two: </label><br>
+		<input type="text" id="n2"><br>
+	</form><br>
+	<button type="button" onclick="add()">+</button>
+	<button type="button" onclick="subtract()">-</button>
+	<button type="button" onclick="multiply()">*</button>
+	<button type="button" onclick="divide()">/</button><br>
+	<br>
+	<textarea name="message" id="result" disabled="disabled">
+	</textarea>
+</body>
+</html>

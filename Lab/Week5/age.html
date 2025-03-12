@@ -1,0 +1,36 @@
+<html>
+
+<body>
+	<!-- Put input boxes here -->
+	<label for="name">Name:</label>
+	<input type="text" id="username" value="TosakaUCW"><br>
+	<br>
+	<label for="age">Age:</label>
+	<input type="number" id="age" value=21><br>
+	<br>
+	<button onclick="myfunction1()">check</button>
+	<br>
+
+	<!-- Show results here -->
+	<p id="result"></p>
+
+	<script>
+		function myfunction1() {
+			// Get age from input box
+			var name = document.getElementById("username").value;
+			var age = parseInt(document.getElementById("age").value);
+			var message = "";
+			if (age >= 21) {
+				message = `Dear <strong>${name}</strong>, you are at least 21 years old. You can drink and drive in the US – but not at the same time!`;
+			} else if (age >= 18) {
+				message = `Dear <strong>${name}</strong>, you are at least 18, but less than 21 years old. You cannot drink but you can drive in the US.`;
+			} else {
+				message = `Dear <strong>${name}</strong>, you are under 18 years of age. You cannot drink or drive in many US states.`;
+			}
+			document.getElementById("result").innerHTML = message;
+		}
+	</script>
+
+</body>
+
+</html>

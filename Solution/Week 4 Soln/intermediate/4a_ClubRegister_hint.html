@@ -1,0 +1,40 @@
+<!-- Use material covered in 4_JS_IntroEvents and showHint(msg). 
+     Function call with input parameters is covered in lecture 5a_JS_Functions-->
+<html>
+<head>
+<style>
+.box{width:400px; border:2px solid green; padding:5px; margin:5px;}
+#helpBox{height:50px;}
+input:hover {border:2px solid blue;}
+select:hover{border:1px solid blue;}
+</style>
+</head>
+
+<body>
+	<div class="box">
+		<h2>Club Register</h2>	
+		<p>Enter your First name:
+		<input type="text" id="fName" onfocus="fName_input()" /></p>
+	</div>
+	
+	<div id="helpbox" class="box">
+	<p id="hint"></p>
+	</div><!-- Output helpful hints to the user -->
+	<script>
+		function fName_input(){
+			clear_input_color();
+			document.getElementById("fName").style.backgroundColor ="yellow";
+			showHint("Enter your first name");
+		}
+
+		function clear_input_color(){
+			document.getElementById("fName").style.backgroundColor ="white";
+		}
+		
+		function showHint(myText){
+			document.getElementById("hint").innerHTML = myText;
+		}
+
+	</script>
+</body>
+</html>

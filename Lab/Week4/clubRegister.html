@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Register</title>
+    <style>
+        .container {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .form-box {
+            border: 2px solid green;
+            padding: 20px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .helper-box {
+            border: 2px solid green;
+            padding: 10px;
+            min-height: 30px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            display: block;
+            width: 95%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        input:focus,
+        select:focus {
+            background-color: lightyellow;
+            outline: 2px solid orange;
+        }
+
+        button {
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Club Register</h2>
+        <div class="form-box">
+            <label>Enter your First name:</label>
+            <input type="text" id="first-name" onfocus="showHelp('Enter Your First Name Here')">
+
+            <label>Enter your Last name:</label>
+            <input type="text" id="last-name" onfocus="showHelp('Enter Your Last Name Here')">
+
+            <label>Enter your mobile Number:</label>
+            <input type="text" id="mobile" onfocus="showHelp('Enter Your Mobile Number Here')">
+
+            <label>Year Grade:</label>
+            <select id="year-grade" onfocus="showHelp('Select Your Year Grade Here')">
+                <option>Year 1</option>
+                <option>Year 2</option>
+                <option>Year 3</option>
+                <option>Year 4</option>
+            </select>
+
+            <label>Enter your Date of birth:</label>
+            <input type="date" id="dob" onfocus="showHelp('Enter Your Date of Birth Here')">
+
+            <button onclick="submitForm()">Submit here</button>
+        </div>
+
+        <div class="helper-box" id="helper-text">
+            Enter Your <strong>First</strong> Name Here
+        </div>
+    </div>
+
+    <script>
+        function showHelp(message) {
+            document.getElementById('helper-text').innerText = message;
+        }
+
+        function submitForm() {
+            let firstName = document.getElementById('first-name').value;
+            let lastName = document.getElementById('last-name').value;
+            let mobile = document.getElementById('mobile').value;
+            let yearGrade = document.getElementById('year-grade').value;
+            let dob = document.getElementById('dob').value;
+
+            alert(`First Name: ${firstName}\nLast Name: ${lastName}\nMobile: ${mobile}\nYear Grade: ${yearGrade}\nDate of Birth: ${dob}`);
+        }
+    </script>
+
+</body>
+
+</html>
