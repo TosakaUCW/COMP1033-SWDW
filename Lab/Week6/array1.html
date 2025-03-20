@@ -1,8 +1,12 @@
 <html>
+
 <head>
-<style>
-#boder{border:2px solid pink; width:200px;}
-</style>
+	<style>
+		#boder {
+			border: 2px solid pink;
+			width: 200px;
+		}
+	</style>
 </head>
 
 <body>
@@ -14,33 +18,34 @@
 	<div id="boder">
 		<p id="demo"></p>
 	</div>
-	
+
 	<br>
 	<button onclick="Sort()">A-Z</button>
-<script>
-var Namelist=[];
+	<script>
+		var Namelist = [];
 
-function addNames(){
-	// Push the value of input box into Namelist.
-	displayNames();
-}
-
-function displayNames(){
-	if(Namelist.length>7)
-		Namelist.length=7;
-	text = "<ul>";
-		for (i = 0; i < Namelist.length; i++) {
-		//
+		function addNames() {
+			// Push the value of input box into Namelist.
+			displayNames();
 		}
-	text += "</ul>";
-	document.getElementById("demo").innerHTML = text;
-}
 
-function Sort(){
-	displayNames();
-}
+		function displayNames() {
+			if (Namelist.length > 7)
+				Namelist.length = 7;
+			text = "<ul>";
+			for (i = 0; i < Namelist.length; i++) {
+				//
+			}
+			text += "</ul>";
+			document.getElementById("demo").innerHTML = text;
+		}
 
-</script>
+		function Sort() {
+			displayNames();
+		}
+
+	</script>
 
 </body>
+
 </html>
