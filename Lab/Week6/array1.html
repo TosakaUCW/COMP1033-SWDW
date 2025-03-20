@@ -20,12 +20,15 @@
 	</div>
 
 	<br>
-	<button onclick="Sort()">A-Z</button>
+	<button onclick="Sort1()">A-Z</button>
+	<button onclick="Sort2()">Z-A</button>
 	<script>
 		var Namelist = [];
 
 		function addNames() {
 			// Push the value of input box into Namelist.
+			var x = document.getElementById("addName").value;
+			Namelist.push(x);
 			displayNames();
 		}
 
@@ -34,13 +37,19 @@
 				Namelist.length = 7;
 			text = "<ul>";
 			for (i = 0; i < Namelist.length; i++) {
-				//
+				text += "<li>" + Namelist[i] + "</li>";
 			}
 			text += "</ul>";
 			document.getElementById("demo").innerHTML = text;
 		}
 
-		function Sort() {
+		function Sort1() {
+			Namelist.sort();
+			displayNames();
+		}
+
+		function Sort2() {
+			Namelist.sort().reverse();
 			displayNames();
 		}
 
