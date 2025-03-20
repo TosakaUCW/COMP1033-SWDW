@@ -22,6 +22,9 @@
 	<br>
 	<button onclick="Sort1()">A-Z</button>
 	<button onclick="Sort2()">Z-A</button>
+	<br><br>
+	<button onclick="Remove()">Remove</button>
+	<button onclick="Update()">Update</button>
 	<script>
 		var Namelist = [];
 
@@ -50,6 +53,38 @@
 
 		function Sort2() {
 			Namelist.sort().reverse();
+			displayNames();
+		}
+
+		function Remove() {
+			var x = document.getElementById("addName").value;
+
+			/*
+				When Remove is clicked, a confirm box would ask if the name in the input box should be removed.
+				If the user clicks OK, the name would be removed from the list.
+				If the user clicks Cancel, the name would not be removed from the list.
+			*/
+			if (confirm("Do you want to remove " + x + " from the list?")) {
+				var index = Namelist.indexOf(x);
+				if (index > -1) {
+					Namelist.splice(index, 1);
+				}
+			}
+
+			displayNames();
+		}
+
+		function Update() {
+			/*
+				When pressed, search for the name in the input box and allow the
+				user to update the name in the list.
+			*/
+			var x = document.getElementById("addName").value;
+			var y = prompt("Enter the new name", x);
+			var index = Namelist.indexOf(x);
+			if (index > -1) {
+				Namelist[index] = y;
+			}
 			displayNames();
 		}
 
