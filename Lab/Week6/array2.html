@@ -1,0 +1,60 @@
+<html>
+
+<head>
+	<style>
+		#boder {
+			border: 2px solid pink;
+			width: 200px;
+		}
+	</style>
+</head>
+
+<body>
+	Please input the name
+	<input id="addName"></input>
+	<button onclick="addNames()">Add</button>
+	<p>Maximum of 7 names!</p>
+
+	<div id="boder">
+		<p id="demo"></p>
+	</div>
+
+	<br>
+	<button onclick="Sort1()">A-Z</button>
+	<button onclick="Sort2()">Z-A</button>
+	<script>
+		var Namelist = [];
+
+		function addNames() {
+			// Push the value of input box into Namelist.
+			var x = document.getElementById("addName").value;
+			Namelist.push(x);
+			displayNames();
+		}
+
+		function displayNames() {
+			if (Namelist.length > 7)
+				Namelist.length = 7;
+			text = "<ul>";
+			for (i = 0; i < Namelist.length; i++) {
+				text += "<li>" + Namelist[i] + "</li>";
+			}
+			text += "</ul>";
+			document.getElementById("demo").innerHTML = text;
+		}
+
+		function Sort1() {
+			Namelist.sort();
+			displayNames();
+		}
+
+		function Sort2() {
+			Namelist.sort().reverse();
+			displayNames();
+		}
+
+	</script>
+
+</body>
+
+</html>
