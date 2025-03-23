@@ -1,88 +1,90 @@
 <!DOCTYPE html>
 <html>
+
 <body>
 
-<h2>JavaScript Object Constructors</h2>
+	<h2>JavaScript Object Constructors</h2>
 
-<p id="demo1"></p>
-<br>
-<p id="demo2"></p>
+	<p id="demo1"></p>
+	<br>
+	<p id="demo2"></p>
 
-<script>
-var student =[];
+	<script>
+		var student = [];
 
-// Constructor function for Person objects
-function Student(first, last, sid, dob) {
-	this.firstName = first;
-	this.lastName = last;
-	this.studentId = sid;
-	this.dateOfBirth = dob;
-	this.age = function(){
-		today = new Date();
-		x = new Date(dob);
-		return today.getFullYear() - x.getFullYear();
-	}
-}
+		// Constructor function for Person objects
+		function Student(first, last, sid, dob) {
+			this.firstName = first;
+			this.lastName = last;
+			this.studentId = sid;
+			this.dateOfBirth = dob;
+			this.age = function () {
+				today = new Date();
+				x = new Date(dob);
+				return today.getFullYear() - x.getFullYear();
+			}
+		}
 
-// Create Students using array objects
-student.push(new Student("Jeff", "Fang", 4444, "1900-09-17"));
-student.push(new Student("Jim", "Heman", 2222, "1990/03/23"));
-student.push(new Student("Nina", "Anni", 3333, "1999-07-23"));
-student.push(new Student("Lily", "Valley", 1111, "07-07-1995"));
-student.push(new Student("Helen", "Troy", 5555, "27/08/1999"));	//incorrect date format
+		// Create Students using array objects
+		student.push(new Student("Jeff", "Fang", 4444, "1900-09-17"));
+		student.push(new Student("Jim", "Heman", 2222, "1990/03/23"));
+		student.push(new Student("Nina", "Anni", 3333, "1999-07-23"));
+		student.push(new Student("Lily", "Valley", 1111, "07-07-1995"));
+		student.push(new Student("Helen", "Troy", 5555, "27/08/1999"));	//incorrect date format
 
-display1();
-sort();
-display2();
+		display1();
+		sort();
+		display2();
 
-// Method 1: Sorting String Attribute in Object
-function sort(){
-	student.sort(function(a, b) {
-			return (a.lastName > b.lastName) ? 1 : ((b.lastName > a.lastName) ? -1 : 0); 
-	});
-}
+		// Method 1: Sorting String Attribute in Object
+		function sort() {
+			student.sort(function (a, b) {
+				return (a.lastName > b.lastName) ? 1 : ((b.lastName > a.lastName) ? -1 : 0);
+			});
+		}
 
-/*
-// Method 2: Sorting String Attribute in Object
-	function compare(a, b){
-		if(a.firstName > b.firstName)
-			return 1;
-		else if(a.firstName < b.firstName)
-			return -1;
-		else
-			return 0;
-	}
-	student.sort(compare);
-*/
+		/*
+		// Method 2: Sorting String Attribute in Object
+			function compare(a, b){
+				if(a.firstName > b.firstName)
+					return 1;
+				else if(a.firstName < b.firstName)
+					return -1;
+				else
+					return 0;
+			}
+			student.sort(compare);
+		*/
 
-/*
-// Method 3: Sort by ID, integer attribute
-function sort(){	
-	student.sort(function(a, b) {
-		return a.studentId - b.studentId;
-	});
-}
-*/
+		/*
+		// Method 3: Sort by ID, integer attribute
+		function sort(){	
+			student.sort(function(a, b) {
+				return a.studentId - b.studentId;
+			});
+		}
+		*/
 
-// Display name & age - looping though an array
-function display1(){
-	var x, txt="Before sorting ------<br>";
-	for(i=0; i<student.length;i++) {
-		txt += student[i]["firstName"] + " " + student[i]["lastName"] + " " + student[i]["studentId"] + "<br>";
-	}
-	document.getElementById("demo1").innerHTML = txt;
-}
+		// Display name & age - looping though an array
+		function display1() {
+			var x, txt = "Before sorting ------<br>";
+			for (i = 0; i < student.length; i++) {
+				txt += student[i]["firstName"] + " " + student[i]["lastName"] + " " + student[i]["studentId"] + "<br>";
+			}
+			document.getElementById("demo1").innerHTML = txt;
+		}
 
-// Display name studentId & age - using for..in loop
-function display2(){
-	var x, txt="After sorting ------<br>";
-	for(x in student) {
-		txt += student[x]["firstName"] + " " + student[x]["lastName"] + " " + student[x].age() + "<br>";
-	}
-	document.getElementById("demo2").innerHTML = txt;
-}
+		// Display name studentId & age - using for..in loop
+		function display2() {
+			var x, txt = "After sorting ------<br>";
+			for (x in student) {
+				txt += student[x]["firstName"] + " " + student[x]["lastName"] + " " + student[x].age() + "<br>";
+			}
+			document.getElementById("demo2").innerHTML = txt;
+		}
 
-</script>
+	</script>
 
 </body>
+
 </html>
