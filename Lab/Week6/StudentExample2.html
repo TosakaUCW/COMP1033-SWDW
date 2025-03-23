@@ -9,6 +9,15 @@
 	<br>
 	<p id="demo2"></p>
 
+	<label for="sort">Sort by:</label>
+	<select id="sort">
+		<option value="firstName">First Name</option>
+		<option value="lastName">Last Name</option>
+		<option value="studentId">Student ID</option>
+		<option value="age">Age</option>
+	</select>
+	<button onclick="sort()">Sort</button>
+
 	<script>
 		var student = [];
 
@@ -38,38 +47,26 @@
 
 		// Method 1: Sorting String Attribute in Object
 		function sort() {
+			var sort = document.getElementById("sort").value;
 			student.sort(function (a, b) {
-				return (a.lastName > b.lastName) ? 1 : ((b.lastName > a.lastName) ? -1 : 0);
+				if (sort == "firstName") {
+					return (a.firstName > b.firstName) ? 1 : ((b.firstName > a.firstName) ? -1 : 0);
+				} else if (sort == "lastName") {
+					return (a.lastName > b.lastName) ? 1 : ((b.lastName > a.lastName) ? -1 : 0);
+				} else if (sort == "studentId") {
+					return a.studentId - b.studentId;
+				} else if (sort == "age") {
+					return a.age() - b.age();
+				}
 			});
+			display2();
 		}
-
-		/*
-		// Method 2: Sorting String Attribute in Object
-			function compare(a, b){
-				if(a.firstName > b.firstName)
-					return 1;
-				else if(a.firstName < b.firstName)
-					return -1;
-				else
-					return 0;
-			}
-			student.sort(compare);
-		*/
-
-		/*
-		// Method 3: Sort by ID, integer attribute
-		function sort(){	
-			student.sort(function(a, b) {
-				return a.studentId - b.studentId;
-			});
-		}
-		*/
 
 		// Display name & age - looping though an array
 		function display1() {
 			var x, txt = "Before sorting ------<br>";
 			for (i = 0; i < student.length; i++) {
-				txt += student[i]["firstName"] + " " + student[i]["lastName"] + " " + student[i]["studentId"] + "<br>";
+				txt += student[i]["firstName"] + " " + student[i]["lastName"] + " " + student[i]["studentId"] + " " + student[i].age() + "<br>";
 			}
 			document.getElementById("demo1").innerHTML = txt;
 		}
@@ -78,7 +75,7 @@
 		function display2() {
 			var x, txt = "After sorting ------<br>";
 			for (x in student) {
-				txt += student[x]["firstName"] + " " + student[x]["lastName"] + " " + student[x].age() + "<br>";
+				txt += student[x]["firstName"] + " " + student[x]["lastName"] + " " + student[x]["studentId"] + " " + student[x].age() + "<br>";
 			}
 			document.getElementById("demo2").innerHTML = txt;
 		}
