@@ -5,7 +5,7 @@
 $servername = "localhost";
 $username 	= "root";	// for local host
 $password 	= "";		// for local host
-$db = "jeffersonfong";	// change to the database name in your local XAMPP
+$db = "SWDW";	// change to the database name in your local XAMPP
 
 // (2) Using DB in bcrab
 //$servername = "stuweb.bcrab.cn";

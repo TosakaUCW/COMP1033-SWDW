@@ -5,13 +5,13 @@
 $servername = "localhost";
 $username 	= "root";	// for local host
 $password 	= "";		// for local host
-$db = "jeffersonfong";	// change to the database name in your local XAMPP
+$db = "SWDW";	// change to the database name in your local XAMPP
 
 // For database bcrab
 //$servername = "stuweb.bcrab.cn";
 //$username = "";	// change to your account
 //$password = "";	// change to your account
-//$db = "jeffersonfong";// change to the database name in db.bcrab.cn
+//$db = "SWDW";// change to the database name in db.bcrab.cn
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db);

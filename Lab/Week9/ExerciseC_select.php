@@ -39,24 +39,24 @@
 						break;
 					case "List CustomerName, ContactName and PostalCode":
                         // FIXME: Complete the SQL
-						$sql = "???";
+						$sql = "SELECT CustomerName, ContactName, PostalCode FROM customers";
 					
 						break;
 					case "List CustomerName, Country and City":
                         // FIXME: Complete the SQL
-						$sql = "???";
+						$sql = "SELECT CustomerName, Country, City FROM customers";
 						break;
                     case "List all customer data in Poland":
                         // FIXME: Complete the SQL
-						$sql = "???";
+						$sql = "SELECT * FROM customers WHERE Country = 'Poland'";
 						break;
                     case "List all Contact names and cities in London":
                         // FIXME: Complete the SQL
-						$sql = "???";
+                        $sql = "SELECT ContactName, City FROM customers WHERE City = 'London'";
 						break;
 					default:
 						// FIXME: Complete the SQL
-						$sql = "???";
+						$sql = "";
 						break;
 			    }
 				
@@ -72,10 +72,10 @@
 			
 			function connectdb(){
 				// FIXME: change to your own details
-				$servername = "localhost"; // if use uic server, change to db.bcrab.cn
-				$username 	= "username";  // change to your account
-				$password 	= "password";	  // change to your account
-				$db		    = "dbname";	  // change to your database name
+				$servername = "localhost";
+				$username = "root";  // Replace with your username
+				$password = "";  // Replace with your password
+				$db = "SWDW";          // Replace with your database name
 			
 				//create connection
 				$conn= new mysqli($servername,$username,$password,$db);
@@ -113,11 +113,11 @@
 					while ($row=mysqli_fetch_array($result)){
 						
                         // FIXME: Complete each table row
-						
-						
-
-
-						
+						echo "<tr>";
+						for ($i = 0; $i < $fields; $i++) {
+							echo "<td>" . $row[$i] . "</td>";
+						}
+						echo "</tr>";
 					}
 				
 				
